@@ -1,0 +1,58 @@
+group organization: 
+- typing round robin same shared screen
+- tracking todo 
+- who will present: 
+
+Outside world interaction (high level)
+- select a madlibs template
+    - pick a story -- user created
+    - select from a list (by title)
+    - randomize a story, we just ask for words, and the story is a surprise
+
+
+- ask for replacement words
+    - respond to an indicator as to what word should be replaced
+    - Multi-word indicators ("Plural_Noun," as opposed to, "Noun")
+
+- print out (hopefully funny) story
+    - use words entered by user to replace keywords in story?
+
+What we'll do (closer to code discussion)
+- read a madlibs template
+    - we can have a default story to start with
+    - find the words to replace (trigger characters?) [] {} ||
+    - store the story as a string 
+
+- replace words
+    - keywords as indicators? noun, color, pronoun, role, etc.
+    - keep track of replacement words (array[{hashtable}]) >>
+    ###- character-by-character? looping###, sorry idea, we don't like you.
+    - split checks for trigger character at start of word "[string02]"[1,-3] == "string"
+        - Store these words so we can ask the user for their input and directly store for use
+    - multi word keywords can be separated by _, and we can replace with a ' ' for users
+    - store replacement words, then replace keywords with global substitution (.gsub)
+
+- Tests
+    - what are we testing?
+    - what are the functions going to do:
+        - test replace string
+        - test find string (done)
+    - test for invalid input
+    - Can we replace "name" with the SAME name?
+    ## test output - (same a test replace string?)
+
+
+- questions:
+    - What should the format look like for the template?
+    - 
+
+- future plans
+    - user-selected trigger characters for keywords
+    - heredocs for our template story (enable paragraphs 5000)
+    - pull text from a file
+    - add to our to-dos: “Replace replace_string function with main code, fix testing with attr_accessor”
+    - add to to-do: .replace the underscore when displaying to user
+    - to-do: It would please me greatly if “the_story” is the first argument tyvm
+
+
+Jess, Meg, Jenn, Paula, James, Jasmine
